@@ -1,0 +1,293 @@
+/* Bibliobattle Survey Companion Site — Stylesheet */
+
+:root {
+  --accent: #1a5276;
+  --accent-light: #aed6f1;
+  --accent-bg: #eaf2f8;
+  --bg: #fafafa;
+  --card: #fff;
+  --border: #ddd;
+  --text: #2c3e50;
+  --muted: #7f8c8d;
+  --max-width: 980px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+
+/* === Header === */
+header {
+  background: linear-gradient(135deg, #1a5276 0%, #2874a6 100%);
+  color: white;
+  padding: 2.5rem 0 1.5rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: .3rem;
+}
+
+header h1 .lang-en { color: white; }
+header h1 .lang-jp { font-size: 1.4rem; opacity: .9; margin-left: .8rem; font-weight: 400; }
+
+header .subtitle {
+  font-size: 1rem;
+  opacity: .85;
+  margin-bottom: 1.5rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,.2);
+  padding-top: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: .95rem;
+  opacity: .9;
+  transition: opacity .2s;
+}
+
+nav a:hover { opacity: 1; text-decoration: underline; }
+
+/* === Main === */
+main {
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: .8rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: .5rem;
+  color: var(--accent);
+}
+
+p { margin-bottom: 1rem; }
+
+a { color: #2980b9; }
+a:hover { text-decoration: underline; }
+
+ol, ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+li { margin-bottom: .3rem; }
+
+/* === Hero section === */
+.hero {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero h2 { border: none; padding: 0; }
+
+/* === Card grid === */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card-link {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+
+.card-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  border-color: var(--accent-light);
+  text-decoration: none;
+}
+
+.card-link h3 { color: var(--accent); margin-bottom: .5rem; }
+.card-link p { font-size: .9rem; color: var(--text); margin: 0; }
+
+/* === Reference list === */
+.ref-cat-header {
+  background: var(--accent-bg);
+  color: var(--accent);
+  padding: .5rem 1rem;
+  border-radius: 6px;
+  margin: 2rem 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.ref-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 1rem 1.3rem;
+  margin-bottom: .8rem;
+}
+
+.ref-id {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: .15rem .5rem;
+  border-radius: 4px;
+  font-size: .8rem;
+  font-weight: 600;
+  margin-right: .5rem;
+}
+
+.ref-title-en { font-weight: 600; color: var(--text); display: block; margin-bottom: .2rem; }
+.ref-title-jp { color: var(--muted); font-size: .9rem; display: block; margin-bottom: .5rem; }
+
+.ref-meta { font-size: .85rem; color: var(--muted); margin-bottom: .5rem; }
+.ref-summary { font-size: .9rem; line-height: 1.6; color: var(--text); }
+
+.ref-tags { margin-top: .5rem; }
+.ref-tag {
+  display: inline-block;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: .75rem;
+  padding: .15rem .5rem;
+  border-radius: 3px;
+  margin-right: .3rem;
+}
+
+.ref-link {
+  font-size: .85rem;
+  display: inline-block;
+  margin-top: .5rem;
+}
+
+/* === Stats === */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-top: .3rem;
+}
+
+/* === Timeline === */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin: 2rem 0;
+  border-left: 3px solid var(--accent-light);
+}
+
+.tl-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.tl-item::before {
+  content: "";
+  position: absolute;
+  left: -2.4rem;
+  top: .5rem;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.tl-year {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+.tl-event {
+  margin-top: .2rem;
+  font-size: .95rem;
+}
+
+/* === Tables === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: .9rem;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: .5rem .8rem;
+  text-align: left;
+}
+
+th { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
+tr:nth-child(even) { background: #f8f9fa; }
+
+/* === Footer === */
+footer {
+  background: #2c3e50;
+  color: #bdc3c7;
+  padding: 2rem 0;
+  font-size: .85rem;
+}
+
+footer a { color: var(--accent-light); }
+
+footer p { margin-bottom: .3rem; }
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  header h1 { font-size: 1.5rem; }
+  header h1 .lang-jp { display: block; margin-left: 0; font-size: 1.1rem; margin-top: .3rem; }
+  nav { gap: .8rem; font-size: .85rem; }
+}
